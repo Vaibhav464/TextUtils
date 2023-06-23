@@ -14,8 +14,6 @@ import Alert from './components/Alerts';
 function App() {
   const [mode, setMode] = useState('light');  // Whether dark mode is enabled or not
   const [alert, setAlert] = useState(null);
-  // const [redCol, setRedCol] = useState('red');
-  // const [greenCol, setGreenCol] = useState('green');
 
   const showAlert = (message, type)=>{
     setAlert({
@@ -27,23 +25,19 @@ function App() {
     }, 2000);
   }
 
-  // const [showText, setShowText] = useState("Enable Dark Mode");
   const toggleMode = () => {
-    if (mode === "light") {
+    if (mode === 'light') {
       setMode ('dark')
       document.body.style.backgroundColor='#282828';
-      // showAlert("Dark mode has been enabled", "success")
-      // document.title = "TextUtils - Dark Mode"
     } 
     else {
       setMode ('light')
       document.body.style.backgroundColor='white'
-      // showAlert("Light mode has been enabled", "success")
     }
   }
 
   const darkColor =()=>{
-    if(mode === "Red"||"Green"){
+    if(mode === 'dark'){
       setMode('dark')
       document.body.style.backgroundColor='#282828';
     }
@@ -53,7 +47,7 @@ function App() {
     }
   }
   const blueColor =()=>{
-    if(mode === "dark"||"Green"){
+    if(mode === 'dark'){
       setMode('dark')
       document.body.style.backgroundColor='#0B1340';
     }
@@ -64,7 +58,7 @@ function App() {
   }
 
   const greenColor=()=>{
-    if(mode === "dark"||"blue"){
+    if(mode === 'dark'){
       setMode('dark')
       document.body.style.backgroundColor='#182c25';
     }
@@ -83,10 +77,10 @@ function App() {
   <Alert alert={alert}/>
   <div className="container my-3">
   {/* <Routes> */}
-          {/* <Route exact path="/about" element={<About />}> */}
+          {/* <Route exact path="/about" element={<About mode={mode}/>}> */}
           {/* </Route> */}
           {/* <Route path="/home" element={ */}
-          <TextForm heading = "Enter the text to convert and analyze below" mode ={mode} blueColor={blueColor} greenColor={greenColor} toggleMode={toggleMode} showAlert={showAlert}/>
+          <TextForm heading = "Convert your text to Uppercase/Lowercase" mode ={mode} blueColor={blueColor} greenColor={greenColor} toggleMode={toggleMode} showAlert={showAlert}/>
           {/* </Route> */}
         {/* </Routes> */}
   </div>

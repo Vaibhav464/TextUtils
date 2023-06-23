@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 export default function Navbar(props) {
   return (
@@ -27,7 +27,7 @@ export default function Navbar(props) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
+              <a className="nav-link" aria-current="page" href="#">
               {/* <Link className="nav-link active" aria-current="page" to="/home"> */}
                 Home
               </a>
@@ -42,18 +42,16 @@ export default function Navbar(props) {
             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
             <button className="btn btn-primary" type="submit">Search</button>
           </form> */}
-          <div className="form-check form-check-inline">
-            <input className="form-check-input border-dark" onClick={props.blueColor} type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"/>
-            <label className={`form-check-label text-${props.mode === 'light' ? 'dark' : 'light'}`} htmlFor="inlineRadio1">B</label>
+          <div className="d-flex">
+            <div className="bg-primary rounded mx-2 border border-light" onClick={props.blueColor} style={{height:'30px', width:'30px', cursor:'pointer'}}></div>
           </div>
-          <div className="form-check form-check-inline">
-            <input className="form-check-input border-dark" onClick={props.greenColor} type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"/>
-            <label className={`form-check-label text-${props.mode === 'light' ? 'dark' : 'light'}`} htmlFor="inlineRadio2">G</label>
+          <div className="d-flex">
+            <div className="bg-success rounded mx-2 border border-light" onClick={props.greenColor} style={{height:'30px', width:'30px', cursor:'pointer'}}></div>
           </div>
-          <div className="form-check form-check-inline">
-            <input className="form-check-input border-dark" onClick={props.darkColor} type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"/>
-            <label className={`form-check-label text-${props.mode === 'light' ? 'dark' : 'light'}`} htmlFor="inlineRadio3">D</label>
+          <div className="d-flex">
+            <div className="bg-dark rounded mx-2 border border-light" onClick={props.darkColor} style={{height:'30px', width:'30px', cursor:'pointer'}}></div>
           </div>
+          
           <div className="form-check form-switch">
             <input
               className="form-check-input"
